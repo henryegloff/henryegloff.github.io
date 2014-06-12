@@ -54,7 +54,7 @@ main {
 }
 
 blockquote{
-  font-style: italic;
+  /*font-style: italic;*/
   margin: 0;
 }
 
