@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Firebase</title>
+</head>
+<body>
+
+<h1>Simple Firebase</h1>
+
+<ul id="ulList"></ul>
+
+
+<p>....</p>
+
+<script>
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAwCZk_D5r-PY8fuqnOtHOslD-vx5aLSF4",
+  authDomain: "users-and-events.firebaseapp.com",
+  databaseURL: "https://users-and-events.firebaseio.com",
+  projectId: "users-and-events",
+  storageBucket: "users-and-events.appspot.com",
+  messagingSenderId: "80231364827"
+};
+firebase.initializeApp(config);
+
+//var database = firebase.database();
+
+
+
+// Create references
+const dbRefObject = firebase.database().ref().child('users');
+const dbRefList = dbRefObject.child(2);
+
+const content = document.getElementById('content');
+const db = firebase.database().ref().child('users');
+const users = db.child('users');
+
+// Sync object changes
+//users.on('value', snap => console.log(snap.val()));
+
+db.on('value', snap => {
+   content.innerText = JSON.stringify(snap.val(), null, 3);
+});
+
+
+
+
+
+
+// const userList = firebase.database().ref().child('users');
+// dbRefList.on('value', snap => console.log(snap.val()));
+
+
+// Sync object changes
+//dbRefObject.on('value', snap => console.log(snap.val()));
+// dbRefObject.on('value', snap => {
+//    preObject.innerText = JSON.stringify(snap.val(), null, 3);
+// });
+
+
+
+
+// Sync list changes 
+
+dbRefList.on('child_added', snap => {
+  const li = document.createElement('li');
+  li.innerText = snap.key + ": " + snap.val();
+  li.id = snap.key;
+  ulList.appendChild(li);
+});
+
+dbRefList.on('child_changed', snap => {
+  const liChanged = document.getElementById(snap.key);
+  liChanged.innerText = snap.key + ": " + snap.val();
+});
+
+dbRefList.on('child_removed', snap => {
+  const liToRemove = document.getElementById(snap.key);
+  liToRemove.remove();
+});
+
+
+</script>
+
+</body>
+</html>
