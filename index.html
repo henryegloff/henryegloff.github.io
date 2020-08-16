@@ -3,20 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <title>Henry Egloff - Github</title>
-  <link rel="stylesheet" href="css/base.css"/>
+  <style>
+  
+body {
+  background-color: #000;
+  margin: 0;
+}
+
+.cube-container {
+  perspective: 1000px;
+  width: 160px;
+  height: 160px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -80px 0 0 -80px;
+}
+
+.cube {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(15deg);
+  animation: rotateCube 7s infinite linear;
+}
+
+.side {
+  position: absolute;
+  opacity: 0.9;
+  background-color: #000;
+}
+
+.side svg {
+  width: 160px;
+  height: 160px;
+  fill: #fff;
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 80px);
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg) translate3d(0, 0, 80px);
+}
+
+.top {
+  width: 100%;
+  height: 100%;
+  transform: rotateX(90deg) translate3d(0, 0, 80px);
+}
+
+.bottom {
+  width: 100%;
+  height: 100%;
+  transform: rotateX(-90deg) translate3d(0, 0, 80px);
+}
+
+.left {
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  margin-left: -80px;
+  transform: rotateY(-90deg) translate3d(0, 0, 80px);
+}
+
+.right {
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  margin-left: -80px;
+  transform: rotateY(90deg) translate3d(0, 0, 80px);
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg) rotateX(-360deg);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .cube-container {
+    width: 250px;
+    height: 250px;
+    margin: -125px 0 0 -125px;
+  }
+
+  .side svg {
+    width: 250px;
+    height: 250px;
+  }
+
+  .front {
+    transform: translate3d(0, 0, 125px);
+  }
+
+  .back {
+    transform: rotateY(90deg) translate3d(0, 0, 125px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translate3d(0, 0, 125px);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translate3d(0, 0, 125px);
+  }
+
+  .left {
+    left: 50%;
+    margin-left: -125px;
+    transform: rotateY(-90deg) translate3d(0, 0, 125px);
+  }
+
+  .right {
+    left: 50%;
+    margin-left: -125px;
+    transform: rotateY(90deg) translate3d(0, 0, 125px);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cube-container {
+    width: 360px;
+    height: 360px;
+    margin: -180px 0 0 -180px;
+    perspective: 2000px;
+  }
+
+  .side svg {
+    width: 360px;
+    height: 360px;
+  }
+
+  .front {
+    transform: translate3d(0, 0, 180px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translate3d(0, 0, 180px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translate3d(0, 0, 180px);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translate3d(0, 0, 180px);
+  }
+
+  .left {
+    left: 50%;
+    margin-left: -180px;
+    transform: rotateY(-90deg) translate3d(0, 0, 180px);
+  }
+
+  .right {
+    left: 50%;
+    margin-left: -180px;
+    transform: rotateY(90deg) translate3d(0, 0, 180px);
+  }
+}    
+    
+  </style>
 </head>
 
 <body>
 
-  <div class="main">        
-    <div class="cont">
-      <div class="cube cube-front"><img src="images/logo.svg"></div>
-      <div class="cube cube-back"><img src="images/logo.svg"></div>
-      <div class="cube cube-top"><img src="images/logo.svg"></div>
-      <div class="cube cube-bottom"><img src="images/logo.svg"></div>
-      <div class="cube cube-left"><img src="images/logo.svg"></div>
-      <div class="cube cube-right"><img src="images/logo.svg"></div>
-    </div>  
+<div class="cube-container">
+  <div class="cube">
+    <div class="side front">
+      <svg>
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+    <div class="side back">
+      <svg>
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+    <div class="side top">
+      <svg>
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+    <div class="side bottom">
+      <svg>
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+    <div class="side left">
+      <svg>
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+    <div class="side right">
+      <svg>
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+  </div>
 </div>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0;" width="0" height="0">
+  <defs>
+    <symbol id="logo" viewBox="0 0 500 500">
+      <polygon points="214.3,500 0,500 0,285.7 71.4,285.7 71.4,428.6 142.9,428.6 142.9,285.7 214.3,285.7 " />
+      <polygon points="214.3,214.3 142.9,214.3 142.9,71.4 71.4,71.4 71.4,214.3 0,214.3 0,0 214.3,0 " />
+      <rect x="285.7" y="428.6" width="214.3" height="71.4" />
+      <polygon points="500,357.1 285.7,357.1 285.7,285.7 428.6,285.7 428.6,214.3 285.7,214.3 285.7,142.9 500,142.9 " />
+      <rect x="285.7" width="214.3" height="71.4" />
+    </symbol>
+  </defs>
+</svg>
+  
 </body>
 </html>
