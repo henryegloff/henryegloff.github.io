@@ -1,0 +1,33 @@
+
+{
+  "name": "Webpack PWA Template",
+  "short_name": "Webpack PWA Template",
+  "description": "A basic progressive web app template generated with Webpack.",
+  "default_locale": "en-au",
+  "start_url": "./index.html",
+  "scope": "./",
+  "background_color": "#010409",
+  "theme_color": "#010409",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./_icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./_icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "developer": {
+    "name": "{author_name}",
+    "url": "https://henryegloff.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ]
+}

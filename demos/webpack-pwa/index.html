@@ -1,1 +1,62 @@
-// hello
+<!DOCTYPE html>
+<html lang="en-au">
+    <head>
+        
+        <title>Webpack PWA Template</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="A basic progressive web app template generated with Webpack.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content=#010409>
+        <meta name="apple-mobile-web-app-status-bar-style" content=#010409>
+        <meta name="author" content=Henry Egloff>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content=@henryegloff>
+        <meta property="og:image" content="./_media/open-graph.jpg">
+
+        <link rel="manifest" href="manifest.json" /> 
+        <link rel="icon" href="_icons/favicon.ico" />  
+        <link rel="apple-touch-icon" href= "_icons/icon-152x152.png" />
+        <link rel="stylesheet" href="styles.css">
+
+        <script type="application/ld+json">
+            {
+                "@context" : "http://schema.org",
+                "@type" : "SoftwareApplication",
+                "name" : "Webpack PWA Template",
+                "image" : "./_media/open-graph.jpg",
+                "author" : {
+                    "@type" : "Person",
+                    "name" : "Henry Egloff"
+                }
+            }
+        </script>
+    
+    </head>
+    <body>
+        <div id="app"></div> <!-- JS App Placeholder -->
+        <div class="screen">
+            <h1>Webpack PWA Template</h1>
+            <h2>A basic progressive web app template generated with Webpack.</h2>
+            <p>By <a href="https://henryegloff.com">Henry Egloff</a></p>
+        </div>
+        <script src="script.js"></script>
+
+        <!-- <script>
+
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+                    
+            </script> -->
+
+
+    </body>
+</html>
