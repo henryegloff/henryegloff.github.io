@@ -590,14 +590,14 @@ section h2 {
 .grid a h3 {
     /*transition: opacity .3s;*/
 
-    transition: .3s;
+    transition: .15s;
 
     /*border-bottom: 1px solid #ccc;*/
 }
 
-/*.grid a h3:hover {
+.grid a h3:hover {
     opacity:  .5;
-}*/
+}
 
 /*.grid a h3:hover::after {
     content: ' -> ';
@@ -611,6 +611,8 @@ section h2 {
 .grid a h3:hover {
     padding-left: .5em;
 }*/
+
+
 
 
 /* Animations
