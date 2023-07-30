@@ -8,42 +8,68 @@
 		specialising in digital art, animation, games, and 3D.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
 </head>
 
-<body light-mode="light">
+<body>
 
 	<a href="#main" class="visually-hidden">
 		Skip to content
 	</a>
 
-	<header class="site-header">
 
-		<div>
-		
-		<!-- <div class="site-header-container"> -->
-		  	<a href="https://henryegloff.com" class="site-title">Henry Egloff</a>
+	<header id="site-header">
+		<div id="site-header-container">
+
+		  	<a href="index.html" id="site-title">Henry Egloff</a>
+
+		  	<div id="main-menu">
+
+			  	<nav role="navigation">
+					<ul>
+						<li><a href="projects.html">Projects</a></li>
+						<li class="current-menu-item"><a href="articles.html">Articles</a></li>
+						<li><a href="tutorials.html">Tutorials</a></li>
+						<li><a href="resources.html">Resources</a></li>
+						<li><a href="info.html">Info</a></li>
+					</ul>
+				</nav>	
+
+				<button id="light-mode-button" class="ui-border">
+					<svg height="30px" viewBox="0 0 30 30" width="30px">
+						<path class="st0" d="M18.77,18.49c-3.31,0-6-2.69-6-6c0-1.78,
+						0.78-3.38,2.01-4.48c-3.64,0.25-6.51,3.27-6.51,6.98c0,3.87,3.13,7,7,7
+						c2.9,0,5.39-1.77,6.45-4.28C20.85,18.2,19.85,18.49,18.77,18.49z"/>
+					</svg>
+					<svg height="30px" viewBox="0 0 30 30" width="30px">
+						<path d="M15,10.77c-2.34,0-4.23,1.9-4.23,4.23s1.9,4.23,4.23,4.23s4.23-1.9,4.23-4.23S17.34,10.77,15,10.77L15,10.77z M6.54,15.85
+							h1.69c0.47,0,0.85-0.38,0.85-0.85s-0.38-0.85-0.85-0.85H6.54c-0.47,0-0.85,0.38-0.85,0.85S6.07,15.85,6.54,15.85z M21.77,15.85h1.69
+							c0.47,0,0.85-0.38,0.85-0.85s-0.38-0.85-0.85-0.85h-1.69c-0.47,0-0.85,0.38-0.85,0.85S21.3,15.85,21.77,15.85z M14.15,6.54v1.69
+							c0,0.47,0.38,0.85,0.85,0.85s0.85-0.38,0.85-0.85V6.54c0-0.47-0.38-0.85-0.85-0.85S14.15,6.07,14.15,6.54z M14.15,21.77v1.69
+							c0,0.47,0.38,0.85,0.85,0.85s0.85-0.38,0.85-0.85v-1.69c0-0.47-0.38-0.85-0.85-0.85S14.15,21.3,14.15,21.77z M9.91,8.72
+							c-0.33-0.33-0.87-0.33-1.19,0c-0.33,0.33-0.33,0.87,0,1.19l0.9,0.9c0.33,0.33,0.87,0.33,1.19,0c0.32-0.33,0.33-0.87,0-1.19
+							L9.91,8.72z M20.38,19.19c-0.33-0.33-0.87-0.33-1.19,0c-0.33,0.33-0.33,0.87,0,1.19l0.9,0.9c0.33,0.33,0.87,0.33,1.19,0
+							c0.33-0.33,0.33-0.87,0-1.19L20.38,19.19z M21.28,9.91c0.33-0.33,0.33-0.87,0-1.19c-0.33-0.33-0.87-0.33-1.19,0l-0.9,0.9
+							c-0.33,0.33-0.33,0.87,0,1.19c0.33,0.32,0.87,0.33,1.19,0L21.28,9.91z M10.81,20.38c0.33-0.33,0.33-0.87,0-1.19
+							c-0.33-0.33-0.87-0.33-1.19,0l-0.9,0.9c-0.33,0.33-0.33,0.87,0,1.19c0.33,0.32,0.87,0.33,1.19,0L10.81,20.38z"/>
+					</svg>
+				</button>
+
+				<button id="fullscreen-button" class="ui-border">
+					<svg height="30px" viewBox="0 0 30 30" width="30px" >
+						<path d="M10,17H8v5h5v-2h-3V17z M8,13h2v-3h3V8H8V13z M20,20h-3v2h5v-5h-2V20z M17,8v2h3v3h2V8H17z"/>
+					</svg>
+					<svg>
+						<path d="M8,19h3v3h2v-5H8V19z M11,11H8v2h5V8h-2V11z M17,22h2v-3h3v-2h-5V22z M19,11V8h-2v5h5v-2H19z"/>
+					</svg>
+				</button>
 			
-		  	<nav id="main-nav" role="navigation">
-				<ul>
-					<li><a href="https://henryegloff.com/projects/">Projects</a></li>
-					<li class="current-menu-item"><a href="https://henryegloff.com/articles/">Articles</a></li>
-					<li><a href="https://henryegloff.com/tutorials/">Tutorials</a></li>
-					<li><a href="https://henryegloff.com/resources/">Resources</a></li>
-					<!-- <li><a href="https://henryegloff.com/resources/">Courses</a></li> -->
-					<li><a href="https://henryegloff.com/info/">Info</a></li>
-				</ul>
-			</nav>
-
-			<button id="light-mode-button" aria-label="Toggle Light Mode">
-				<svg>
-					<path d="M2,10c0,4.42,3.58,8,8,8s8-3.58,8-8s-3.58-8-8-8S2,5.58,2,10z M10.75,3.55C13.98,3.92,16.5,6.67,16.5,10 s-2.52,6.08-5.75,6.45V3.55z"/>
-				</svg>
-			</button> 
+			
+			</div>
 
 			<button aria-label="Mobile Menu" id="mobile-menu-button">
 		        <div></div>
@@ -52,56 +78,21 @@
 		    </button>
 
 		</div>
-
 	</header>
-
 
 
 	<main id="main" class="main" role="main">
 
 		<header class="page-header-1">
-			<h1 class="visually-hidden">Articles</h1>
+			<h1 class="visually-hidden-">Articles</h1>
 			<p>
-				<!-- Articles relating to game development, teaching, design, and digital art. -->
 				A range of articles relating to digital art, design, web development, teaching, and games.
-
 			</p>
-
-			<!-- <nav class="social-menu">
-			    <ul>
-			        <li>
-			          	<a href="https://www.instagram.com/henryegloff" aria-label="Instagram">
-			            	<svg><use xlink:href="#icon-instagram"></use></svg>
-			          	</a>
-			        </li>
-					 <li>
-			          	<a href="https://www.youtube.com/henryegloff" aria-label="Youtube">
-			            	<svg><use xlink:href="#icon-youtube"></use></svg>
-			          	</a>
-			        </li>
-			        <li>
-			          	<a href="https://codepen.io/henryegloff" aria-label="Codepen">
-			            	<svg><use xlink:href="#icon-codepen"></use></svg>
-			          	</a>
-			        </li>
-			        <li>
-			          	<a href="https://www.behance.net/henryegloff" aria-label="Behance">
-			            	<svg><use xlink:href="#icon-behance"></use></svg>
-			          	</a>
-			        </li>
-					<li>
-			          	<a href="https://www.twitter.com/henryegloff" aria-label="Twitter">
-			            	<svg><use xlink:href="#icon-twitter"></use></svg>
-			          	</a>
-			        </li>
-			     </ul>
-		    </nav> -->
-
 		</header>
 
-		<!-- <section>
+		<section>
 
-			<h2>Featured Projects</h2>
+			<!-- <h2>Featured Projects</h2> -->
 	
 			<div class="grid">
 
@@ -119,11 +110,6 @@
 						Created with Three.js, Anime.js, Tone.js, Blender, and Mixamo.
 					</p>
 
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
 				</article>
 	
 				<article>
@@ -140,11 +126,6 @@
 						capture actions, created with Three.js.
 					</p>
 					
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
 				</article>
 	
 
@@ -160,12 +141,6 @@
 						3D digital artwork / animation created with three.js.
 					</p>
 					
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-
 				</article>
 	
 				<article>
@@ -182,12 +157,21 @@
 					<p>A study of movement, materials, and lighting using Three.js.</p>
 					
 
+
+				</article>
+	
+				<article>
+					
 					<a href="#">
-						<p>
-							View Project
-						</p>
+						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
+					</a>
+					
+					<a href="#">
+						<h3>Project Title</h3>
 					</a>
 
+					<p>A study of movement, materials, and lighting using Three.js.</p>
+					
 				</article>
 	
 				<article>
@@ -203,198 +187,47 @@
 					
 					<p>A study of movement, materials, and lighting using Three.js.</p>
 					
-
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-
-				</article>
-	
-				<article>
-					
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-
-					
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-					
-
-					<a href="#" class="cta">
-						<p>
-							View Project
-						</p>
-					</a>
-
 				</article>
 			</div>
 
-			<div class="section-link">
-				<a href="#">
-					View All Projects
-				</a>
-			</div>
-	
 		</section>
 	
 	
 	
 	
-		<section>
-
-			<h2>Latest Articles</h2>
-	
-			<div class="grid">
-
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-
-					<a href="#">
-						<h3>Muse</h3>
-					</a>
-					
-					<p>
-						An exploration of space, motion, and generative audio. 
-						Created with Three.js, Anime.js, Tone.js, Blender, and Mixamo.
-					</p>
-
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-
-					<a href="#">
-						<h3>Robot Animations</h3>
-					</a>
-					
-					<p>
-						An interactive 3D demo of a game character model with motion 
-						capture actions, created with Three.js.
-					</p>
-					
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-				</article>
-	
-
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Lustrous</h3>
-					</a>
-
-					<p>
-						3D digital artwork / animation created with three.js.
-					</p>
-					
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-
-				</article>
-	
-				<article>
-					
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-
-					
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-					
-
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-
-				</article>
-	
-				<article>
-					
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-
-					
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-					
-
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-
-				</article>
-	
-				<article>
-					
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-
-					
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-					
-
-					<a href="#">
-						<p>
-							View Project
-						</p>
-					</a>
-
-				</article>
-			</div>
-
-			<div class="section-link">
-				<a href="#">
-					View All Articles
-				</a>
-			</div>
-	
-		</section> -->
+		
 		
 	</main>
 
+	<footer>
+		<!-- &copy; Henry Egloff 2023 -->
+	</footer>
 
 
+	<div id="mobile-menu-background"></div>
 
+	<div id="mobile-menu">
+
+		<button aria-label="Close Menu" id="close-menu-button">
+			<svg width="40" height="40" viewBox="0 -960 960 960" >
+			    <path d="m251.333-204.667-46.666-46.666L433.334-480 
+			    204.667-708.667l46.666-46.666L480-526.666l228.667-228.667 
+			    46.666 46.666L526.666-480l228.667 228.667-46.666 
+			    46.666L480-433.334 251.333-204.667Z"/>
+			</svg>
+		</button>
+
+		<nav role="navigation">
+			<a href="index.html">Henry Egloff</a>
+			<ul>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="articles.html">Articles</a></li>
+				<li><a href="tutorials.html">Tutorials</a></li>
+				<li><a href="resources.html">Resources</a></li>
+				<li><a href="info.html">Info</a></li>
+			</ul>
+		</nav>
+	</div>
 
 
 
@@ -453,30 +286,6 @@
 		</defs>
 	</svg>
 
-
-	<div id="mobile-menu-background"></div>
-
-	<div id="mobile-menu">
-
-		<!--  <svg height="40" viewBox="0 -960 960 960" width="40">
-		            <path d="m251.333-204.667-46.666-46.666L433.334-480 
-		            204.667-708.667l46.666-46.666L480-526.666l228.667-228.667 
-		            46.666 46.666L526.666-480l228.667 228.667-46.666 
-		            46.666L480-433.334 251.333-204.667Z"/>
-		        </svg> -->
-
-
-		<nav role="navigation">
-			<ul>
-				<li><a href="https://henryegloff.com/projects/">Projects</a></li>
-				<li><a href="https://henryegloff.com/articles/">Articles</a></li>
-				<li><a href="https://henryegloff.com/tutorials/">Tutorials</a></li>
-				<li><a href="https://henryegloff.com/resources/">Resources</a></li>
-				<!-- <li><a href="https://henryegloff.com/resources/">Courses</a></li> -->
-				<li><a href="https://henryegloff.com/info/">Info</a></li>
-			</ul>
-		</nav>
-	</div>
 
 	<script src="scripts/headroom.min.js"></script>
 	<script src="scripts/script.js"></script>

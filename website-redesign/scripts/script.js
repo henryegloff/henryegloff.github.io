@@ -39,6 +39,12 @@ elementsToTransition.forEach((el) => observer.observe(el));
 
 
 
+
+
+
+
+
+
 // Headroom (https://wicky.nillia.ms/headroom.js/)
 
 var headroom_options = {
@@ -51,7 +57,7 @@ var headroom_options = {
 
 }
 
-var header = document.querySelector(".site-header");
+var header = document.querySelector("#site-header");
 // construct an instance of Headroom, passing the element
 var headroom  = new Headroom(header, headroom_options);
 // initialise
@@ -97,15 +103,15 @@ if (localStorage.light_mode == "dark") {
 
 // Mobile Menu
 
-let mobile_menu_open = false
+const mobile_menu_open = false
 
 const mobile_menu_button = document.getElementById('mobile-menu-button')
-
 mobile_menu_button.addEventListener('click', () => {
 
     if(!mobile_menu_open) {
         document.body.setAttribute("mobile-menu","")
         mobile_menu_open = true
+        document.getElementById("close-menu-button").focus({ focusVisible: true });
     }
     else {
         document.body.removeAttribute("mobile-menu","")
@@ -119,15 +125,78 @@ mobile_menu_button.addEventListener('click', () => {
 
 
 const mobile_menu_background = document.getElementById('mobile-menu-background')
-
 mobile_menu_background.addEventListener('click', () => {
-
     document.body.removeAttribute("mobile-menu","")
     mobile_menu_open = false
-    
-    //mobile_menu_background.blur();
-    
+    mobile_menu_background.blur();
 })
+
+
+const close_menu_button = document.getElementById('close-menu-button')
+close_menu_button.addEventListener('click', () => {
+    document.body.removeAttribute("mobile-menu","")
+    mobile_menu_open = false
+    close_menu_button.blur();
+})
+
+
+
+
+
+// Fullscreen Button
+
+const main_menu = document.getElementById('main-menu')
+
+if (document.fullscreenEnabled || /* Standard syntax */
+    document.webkitFullscreenEnabled || /* Safari */
+    document.msFullscreenEnabled/* IE11 */) 
+{
+    document.body.setAttribute("fullscreen-supported","") 
+    
+}
+
+
+const fullscreen_button = document.getElementById('fullscreen-button')
+fullscreen_button.addEventListener('click', () => {
+    toggle_fullscreen();
+})
+
+
+function toggle_fullscreen() {
+    if (!document.fullscreenElement &&    // alternative standard method
+        !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+        document.body.setAttribute("fullscreen","") 
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        }
+        document.body.removeAttribute("fullscreen") 
+    }              
+}
+
+function check_fullscreen() {
+    // Because users can exit & enter fullscreen differently
+    if (document.fullscreenElement  || document.webkitIsFullScreen || document.mozFullScreen) { 
+    document.body.setAttribute("fullscreen","") 
+    }
+    else  { 
+    document.body.removeAttribute("fullscreen") 
+    }
+}
+setInterval(function(){ check_fullscreen();}, 1000); 
+
+
 
 
 
