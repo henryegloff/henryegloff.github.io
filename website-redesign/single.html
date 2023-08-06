@@ -13,6 +13,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/x-icon" href="https://henryegloff.com/_icons/favicon.ico">
 	<link rel="apple-touch-icon" href="https://henryegloff.com/_icons/icon-152x152.png">
+
+	<link rel="stylesheet" href="css/github.min.css">
+	<link rel="stylesheet" href="css/github-dark.min.css" title="hljs-dark" disabled >
+
 	<link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -25,7 +29,6 @@
 
 
 	<header id="site-header">
-
 		<div id="site-header-container">
 
 		  	<a href="index.html" id="site-title">Henry Egloff</a>
@@ -34,15 +37,15 @@
 
 			  	<nav role="navigation">
 					<ul>
-						<li><a href="index.html">Projects</a></li>
-						<li><a href="category.html">Articles</a></li>
-						<li><a href="single.html">Tutorials</a></li>
-						<li><a href="single-2.html">Resources</a></li>
-						<li><a href="404.html">Info</a></li>
+						<li><a href="projects.html">Projects</a></li>
+						<li><a href="articles.html">Articles</a></li>
+						<li><a href="tutorials.html">Tutorials</a></li>
+						<li><a href="resources.html">Resources</a></li>
+						<li><a href="info.html">Info</a></li>
 					</ul>
 				</nav>	
 
-				<button id="light-mode-button">
+				<button id="light-mode-button" class="ui-border-">
 					<svg height="30px" viewBox="0 0 30 30" width="30px">
 						<path class="st0" d="M18.77,18.49c-3.31,0-6-2.69-6-6c0-1.78,
 						0.78-3.38,2.01-4.48c-3.64,0.25-6.51,3.27-6.51,6.98c0,3.87,3.13,7,7,7
@@ -62,6 +65,16 @@
 					</svg>
 				</button>
 
+				<button id="fullscreen-button" class="ui-border-">
+					<svg height="30px" viewBox="0 0 30 30" width="30px" >
+						<path d="M10,17H8v5h5v-2h-3V17z M8,13h2v-3h3V8H8V13z M20,20h-3v2h5v-5h-2V20z M17,8v2h3v3h2V8H17z"/>
+					</svg>
+					<svg>
+						<path d="M8,19h3v3h2v-5H8V19z M11,11H8v2h5V8h-2V11z M17,22h2v-3h3v-2h-5V22z M19,11V8h-2v5h5v-2H19z"/>
+					</svg>
+				</button>
+			
+			
 			</div>
 
 			<button aria-label="Mobile Menu" id="mobile-menu-button">
@@ -76,183 +89,279 @@
 
 	<main id="main" class="main" role="main">
 
-		<header class="category-header">
-			<h1 class="visually-hidden">Henry Egloff</h1>
+
+		<article class="single">
+
+
+			<header>
+				<h1 class="article">
+					How to Code a Simple Dark Mode Toggle
+					<!-- The Best Web Design Examples of All Time -->
+
+					<!-- How to Render a Background Image in Blender 2.8 Using the Document World Settings -->
+
+				</h1>
+				<p>
+					August 4, 2019
+				</p>
+			</header>
+
+
+		<!-- 
+			<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wide">
+				<div class="wp-block-embed__wrapper">
+					<iframe title="Lustrous" width="500" height="281" src="https://www.youtube.com/embed/qpWOhnsZRA0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<figcaption class="wp-element-caption">&#8220;Lustrous&#8221; : 3D digital artwork / animation</figcaption>
+			</figure> -->
+
+
+
+
+
+
+			<div class="-standard-article-iframe custom-iframe"> 
+				<iframe src="https://henryegloff.com/demos/threejs/animation-animejs/" title="Three.js and Anime.js Demo">
+				</iframe>
+				<div id="anime" class="iframe-overlay"></div>
+			</div>
+
+			<div class="aligncenter iframe-control-button"> 
+				<button class="iframe-overlay-button" onclick="toggle_iframe_access(anime);toggle_iframe_access_button(this)">Enable Controls</button>
+			</div> 
+
+
+
+
+			<!-- <div class="wide-iframe">
+
+				<iframe src="https://henryegloff.com/works/muse-001/?iframe=true" title="Muse 001"></iframe>
+
+				<div id="muse" class="iframe-overlay"></div>
+			</div>
+
+			<div class="aligncenter iframe-control-button"> 
+				<button class="iframe-overlay-button" onclick="toggle_iframe_access(muse);toggle_iframe_access_button(this)">Enable Controls</button>
+			</div> -->
+
+
+
 			<p>
-				Multimedia artist, designer, and developer, 
-				specialising in digital art, animation, games, and 3D. 
+				This is a step by step guide that will show you how to code a basic website dark mode toggle button using simple HTML, CSS, and Javascript.
 			</p>
-		</header>
 
-		<section>
+			<p class="emphasis">Quick disclaimer, even though I do heaps of work with code, I do not regard myself as a top level coder. (- I’m more of a front end kind of guy). So please keep me posted if you find issues with this code and or if you can offer me any suggestions for how to improve it. 😉</p>
 
-			<h2>Featured Projects</h2>
-	
-			<div class="grid">
 
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Muse</h3>
-					</a>
-					<p>
-						An exploration of space, motion, and generative audio. 
-						Created with Three.js, Anime.js, Tone.js, Blender, and Mixamo.
-					</p>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Robot Animations</h3>
-					</a>
-					<p>
-						An interactive 3D demo of a game character model with motion 
-						capture actions, created with Three.js.
-					</p>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Lustrous</h3>
-					</a>
-					<p>
-						3D digital artwork / animation created with three.js.
-					</p>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-					<p>A study of movement, materials, and lighting using Three.js.</p>	
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-					<p>A study of movement, materials, and lighting using Three.js.</p>	
-				</article>
-			</div>
 
-			<div class="section-link">
-				<a href="#" class="-ui-border">
-					View All Projects
-				</a>
-			</div>
-	
-		</section>
-	
-	
-	
-		<section>
+			<p>
+				Here is a working demo of what we will be creating.
+			</p>
 
-			<h2>Latest Articles</h2>
-	
-			<div class="grid">
 
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Muse</h3>
-					</a>
-					<p>
-						An exploration of space, motion, and generative audio. 
-						Created with Three.js, Anime.js, Tone.js, Blender, and Mixamo.
-					</p>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Robot Animations</h3>
-					</a>					
-					<p>
-						An interactive 3D demo of a game character model with motion 
-						capture actions, created with Three.js.
-					</p>					
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Lustrous</h3>
-					</a>
-					<p>
-						3D digital artwork / animation created with three.js.
-					</p>	
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-					<p>A study of movement, materials, and lighting using Three.js.</p>	
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-				</article>
-	
-				<article>
-					<a href="#">
-						<img src="https://henryegloff.com/media/the-partition-by-henry-egloff.jpg">
-					</a>
-					<a href="#">
-						<h3>Project Title</h3>
-					</a>
-					<p>A study of movement, materials, and lighting using Three.js.</p>
-				</article>
 
-			</div>
 
-			<div class="section-link">
-				<a href="#">
-					View All Articles
-				</a>
-			</div>
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1600" height="1100" src="https://henryegloff.com/media/xx142-b2-threejs-webgl-game-1600x1100.jpg" alt="" class="wp-image-2110" srcset="https://henryegloff.com/media/xx142-b2-threejs-webgl-game-1600x1100.jpg 1600w, https://henryegloff.com/media/xx142-b2-threejs-webgl-game-960x660.jpg 960w, https://henryegloff.com/media/xx142-b2-threejs-webgl-game-560x385.jpg 560w, https://henryegloff.com/media/xx142-b2-threejs-webgl-game-768x528.jpg 768w, https://henryegloff.com/media/xx142-b2-threejs-webgl-game-1536x1056.jpg 1536w, https://henryegloff.com/media/xx142-b2-threejs-webgl-game.jpg 1920w" sizes="(min-width: 600px) 82vw, (min-width: 900px) 740px, (min-width: 1200px) 800px, 86vw" /><figcaption class="wp-element-caption"><a aria-label="xx142-b2.exe (opens in a new tab)" href="https://js13kgames.com/games/xx142-b2exe/index.html" target="_blank" rel="noreferrer noopener"><strong>xx142-b2</strong>.exe</a> by Ben Clark and Salvator Prevati</figcaption></figure>
+
+
+
 	
-		</section>
-		
+<h2>HTML</h2>
+
+<p>Hendrerit a ac quam dictum a in dapibus sodales sociosqu lectus lorem cras lectus aliquet cum interdum. In dui a in sed habitant faucibus in et tellus urna nam netus est ipsum inceptos suspendisse ullamcorper elit ullamcorper mattis praesent. Velit quam a magna mus ut magna sodales porttitor mi a odio lobortis ut torquent quis in vestibulum sit ac ullamcorper vitae parturient a malesuada.</p>
+	
+<pre class="wp-block-code" script-type="HTML"><code class="language-html" >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+	&lt;h1&gt;This is a Heading&lt;/h1&gt;
+	&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+	
+
+
+<h2>Javascript</h2>
+
+<p>You can find the 5K sequence and more stuff like this on <a href="https://www.youtube.com/henryegloff">my Youtube channel</a>, and mobile friendly versions on <a href="https://www.instagram.com/p/CZdkCqipxEe/">Instagram</a> and <a href="https://twitter.com/henryegloff/status/1488740788897185792">Twitter</a>. &#8211; I’ve also published it to <a href="https://www.behance.net/gallery/136459957/Lustrous">Behance</a> and <a href="https://www.artstation.com/artwork/vJE8N3">Artstation</a>.</p>
+
+
+
+
+	
+<pre class="wp-block-code" script-type="Javascript"><code>
+// Anime Tweening
+
+anime({
+	targets: &#91;icosahedron.position],
+	y: 1.5,
+	easing: "easeInOutSine",
+	duration: 3000,
+	direction: "alternate",
+	loop: true
+});
+
+anime({
+	targets: &#91;icosahedron.rotation],
+	y: 1, x: 2, z: 3,
+	easing: "easeInOutSine",
+	duration: 5000,
+	direction: "alternate",
+	loop: true
+});
+
+anime({
+	targets: &#91;icosahedron.scale],
+	x: 1.25, y: 1.25, z: 1.25,
+	easing: "easeInOutSine",
+	duration: 2000,
+	direction: "alternate",
+	loop: true
+});
+</code></pre>
+	
+	
+	
+<h2>CSS</h2>
+
+<p>
+	Ullamcorper vestibulum posuere platea mollis urna a mi augue fermentum ipsum volutpat a aliquet a suspendisse sem aliquet torquent conubia urna sed sagittis purus a habitasse. In a ac ipsum parturient condimentum aliquet congue suspendisse diam a class blandit a a pulvinar a a a posuere quam. A hac arcu parturient scelerisque quam iaculis interdum integer proin pulvinar dui consectetur egestas in iaculis a id sociosqu parturient.
+</p>
+
+
+	
+<pre class="wp-block-code" script-type="CSS"><code>
+* {
+    font-family: 'Inter', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+/* Colors
+----------------- */
+
+:root {
+
+  --dark: #0d0f12;
+  --light: #ddedff;
+
+  --button-outline: rgba(13,15,18, .1);
+  --button-outline-focus: rgba(13,15,18, .5);
+
+  --button-outline-dark: rgba(221,237,255, .1);
+  --button-outline-dark-focus: rgba(221,237,255, .5);
+
+}
+
+/* Dark Mode
+----------------- */
+
+[light-mode="dark"]{
+  background: var(--dark);
+  color: var(--light);
+}
+
+[light-mode="dark"] a{
+  color: var(--light);
+}
+
+[light-mode="dark"] .section-link a {
+  border:  1px solid var(--button-outline-dark);
+}
+
+[light-mode="dark"] .section-link a:hover {
+  border:  1px solid var(--button-outline-dark-focus);
+}
+
+[light-mode="dark"] #mobile-menu-button div {
+  background: var(--light);
+}
+
+</code></pre>	
+	
+	
+
+
+
+
+<h2>HTML Table</h2>
+
+<p>
+	In a ac ipsum parturient condimentum aliquet congue suspendisse diam a class blandit a a pulvinar a a a posuere quam. A hac arcu parturient scelerisque quam iaculis interdum integer proin pulvinar dui consectetur egestas in iaculis a id sociosqu parturient.
+</p>
+
+
+<div class="content-container">
+	<table>
+	  <tr>
+	    <th>Company</th>
+	    <th>Contact</th>
+	    <th>Country</th>
+	  </tr>
+	  <tr>
+	    <td>Alfreds Futterkiste</td>
+	    <td>Maria Anders</td>
+	    <td>Germany</td>
+	  </tr>
+	  <tr>
+	    <td>Centro comercial Moctezuma</td>
+	    <td>Francisco Chang</td>
+	    <td>Mexico</td>
+	  </tr>
+	  <tr>
+	    <td>Ernst Handel</td>
+	    <td>Roland Mendel</td>
+	    <td>Austria</td>
+	  </tr>
+	  <tr>
+	    <td>Island Trading</td>
+	    <td>Helen Bennett</td>
+	    <td>UK</td>
+	  </tr>
+	  <tr>
+	    <td>Laughing Bacchus Winecellars</td>
+	    <td>Yoshi Tannamuri</td>
+	    <td>Canada</td>
+	  </tr>
+	  <tr>
+	    <td>Magazzini Alimentari Riuniti</td>
+	    <td>Giovanni Rovelli</td>
+	    <td>Italy</td>
+	  </tr>
+	</table>
+</div>
+
+
+<h3>Heading 3</h3>
+
+<p>
+	Pulvinar nunc adipiscing sed accumsan arcu accumsan condimentum a duis vel parturient mus lacus ac scelerisque eget class donec pharetra ullamcorper ullamcorper et malesuada vestibulum elit suspendisse rhoncus ullamcorper. Ullamcorper vestibulum posuere platea mollis urna a mi augue fermentum ipsum volutpat a aliquet a suspendisse sem aliquet torquent conubia urna sed sagittis purus a habitasse. In a ac ipsum parturient condimentum aliquet congue suspendisse diam a class blandit a a pulvinar a a a posuere quam. A hac arcu parturient scelerisque quam iaculis interdum integer proin pulvinar dui consectetur egestas in iaculis a id sociosqu parturient.
+</p>
+
+	<!-- <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube --wide">
+		<div class="wp-block-embed__wrapper">
+			<iframe title="Lustrous" width="500" height="281" src="https://www.youtube.com/embed/qpWOhnsZRA0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<figcaption class="wp-element-caption">&#8220;Lustrous&#8221; : 3D digital artwork / animation</figcaption>
+	</figure> -->
+
+
+
+
+
+
+		</article>
+
 	</main>
 
 	<footer class="site-footer">
@@ -332,50 +441,27 @@
 		</button>
 
 		<nav role="navigation">
-			<a href="index.html" class="mobile-menu-title">Henry Egloff</a>
-			<ul class="mobile-main-menu">
-				<li><a href="index.html">Projects</a></li>
-				<li class="current-menu-item"><a href="category.html">Articles</a></li>
-				<li><a href="single.html">Tutorials</a></li>
-				<li><a href="single-2.html">Resources</a></li>
-				<li><a href="404.html">Info</a></li>
+			<a href="index.html">Henry Egloff</a>
+			<ul>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="articles.html">Articles</a></li>
+				<li><a href="tutorials.html">Tutorials</a></li>
+				<li><a href="resources.html">Resources</a></li>
+				<li><a href="info.html">Info</a></li>
 			</ul>
 		</nav>
-
-		<nav class="social-menu">
-		    <ul>
-		        <li>
-		          	<a href="https://www.instagram.com/henryegloff" aria-label="Instagram">
-		            	<svg><use xlink:href="#icon-instagram"></use></svg>
-		          	</a>
-		        </li>
-				 <li>
-		          	<a href="https://www.youtube.com/henryegloff" aria-label="Youtube">
-		            	<svg><use xlink:href="#icon-youtube"></use></svg>
-		          	</a>
-		        </li>
-		        <li>
-		          	<a href="https://codepen.io/henryegloff" aria-label="Codepen">
-		            	<svg><use xlink:href="#icon-codepen"></use></svg>
-		          	</a>
-		        </li>
-		        <li>
-		          	<a href="https://www.behance.net/henryegloff" aria-label="Behance">
-		            	<svg><use xlink:href="#icon-behance"></use></svg>
-		          	</a>
-		        </li>
-				<li>
-		          	<a href="https://www.twitter.com/henryegloff" aria-label="Twitter">
-		            	<svg><use xlink:href="#icon-twitter"></use></svg>
-		          	</a>
-		        </li>
-		     </ul>
-	    </nav>
-
 	</div>
 
 
 
+	<!-- <div class="scroll-to-top-container">
+		<button id="scroll-to-top-button">
+			
+
+			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+
+		</button>
+	</div> -->
 
 
 
@@ -434,6 +520,7 @@
 		</defs>
 	</svg>
 
+	<script src="scripts/highlight.min.js"></script>
 	<script src="scripts/script.js"></script>
 
 </body>
